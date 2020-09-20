@@ -3,6 +3,8 @@ import python_bitbankcc
 import requests
 import json
 import cgi
+import time
+
 
 base_url = "https://api.bitflyer.jp/v1/"
 
@@ -25,13 +27,17 @@ query = {"product_code":"BTC_JPY"}
 res= api.get("ticker",query)
     
     #表示
-print("現在のBTC/JPY BID:" + str(int(res["best_bid"])) + " ASK:" + str(int(res["best_ask"])))
-
+#print("[Bitflyer]現在のBTC/JPY BID : " + str(int(res["best_bid"])))
     
-
-pub = python_bitbankcc.public()
-bticker = pub.get_ticker("btc_jpy")
-#print(bticker)
+sbticker = 0 
+pub = python_bitbankcc.public()   
+while 1 < 3:
+    time.sleep(1)
+    bticker = pub.get_ticker("btc_jpy")
+    if bticker["last"] != sbticker:
+        print(str(bticker['timestamp'])+" [BitBank]現在のBTC/JPY BID : "+bticker["last"]+" JPY")
+        sbticker = bticker["last"]
+        
 
 #btc_jpy, xrp_jpy, ltc_btc, eth_btc, mona_jpy, mona_btc, bcc_jpy, bcc_btc
      
