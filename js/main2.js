@@ -1,4 +1,4 @@
-let requestURL = "https://api.bitflyer.jp/v1/ticker?product_code=BTC_JPY";
+let requestURL = "https://riyblog.shop/arg/?u=https://api.bitflyer.jp/v1/ticker?product_code=BTC_JPY";
 let request = new XMLHttpRequest();
 let old = 0;
 let mo = 20;
