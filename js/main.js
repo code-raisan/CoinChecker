@@ -1,4 +1,4 @@
-let requestURL = "https://public.bitbank.cc/btc_jpy/ticker";
+let requestURL = "https://api.bitflyer.jp/v1/?product_code=BTC_JPY";
 let request = new XMLHttpRequest();
 let old = 0;
 let mo = 20;
