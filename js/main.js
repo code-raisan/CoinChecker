@@ -1,4 +1,4 @@
-let requestURL = "https://api.bitflyer.jp/v1/?product_code=BTC_JPY";
+let requestURL = "https://api.bitflyer.jp/v1/ticker?product_code=BTC_JPY";
 let request = new XMLHttpRequest();
 let old = 0;
 let mo = 20;
@@ -16,7 +16,7 @@ function xhr(){
     }
     
     function ps(res){
-        let mo = res.data.last;
+        let mo = res.ltp;
         console.log(mo);
         if(old === 0){
             dom.innerText = "現在の価格 : " + mo;
