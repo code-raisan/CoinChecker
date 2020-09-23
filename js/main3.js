@@ -8,6 +8,7 @@ const dom2 = document.getElementById("dom2");
 dom.innerText = "お待ちください...";
 
 function xhr(){
+    dom.setAttribute("class","n");
     request.open("GET", requestURL);
     request.responseType = "json";
     request.send();
@@ -24,9 +25,11 @@ function xhr(){
         }else if(old < mo){
             dom2.innerText = "価格が上がりました";
             dom.innerText = "現在の価格 : " + mo;
+            dom.setAttribute("class","g");
         }else if(mo < old){
             dom2.innerText = "価格が下がりました";
             dom.innerText = "現在の価格 : " + mo;
+            dom.setAttribute("class","r");
         }
         old = mo;
     }
