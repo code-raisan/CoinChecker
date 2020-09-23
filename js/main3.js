@@ -8,7 +8,7 @@ const dom2 = document.getElementById("dom2");
 dom.innerText = "お待ちください...";
 
 function xhr(){
-    dom.setAttribute("class","n");
+    //dom.setAttribute("class","n");
     request.open("GET", requestURL);
     request.responseType = "json";
     request.send();
