@@ -12,7 +12,7 @@ bitflyer_old = 0
 coincheck_old = 0
 bitbank_old = 0
 
-while 1< 2:
+while True:
     time.sleep(1)
     now_date = datetime.now().strftime("%Y/%m/%d %H:%M:%S")
     bitflyer_res = requests.get(bitflyer_api + "BTC_JPY")
